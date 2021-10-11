@@ -62,8 +62,9 @@ export default function Home() {
   };
 
   useEffect(() => {
-    // TODO
-    // set up wallet events and initial connection
+    window.ethereum.request({ method: "eth_accounts" }).then(setAccounts);
+
+    window.ethereum.on("accountChanged", setAccounts);
   }, []);
 
   useEffect(() => {
