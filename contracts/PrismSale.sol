@@ -16,12 +16,12 @@ contract PrismSale {
     charity = 0x1d57d14b1C8C80fe553F65EcdAA1581918972CCB;
   }
 
-  function canBuy () public returns (bool){
+  function canBuy () public view returns (bool){
     return totalSales < maxSales;
 
   }
 
-  function hasAccess () public returns (bool){
+  function hasAccess () public view returns (bool){
     return sales[msg.sender];
   }
 
